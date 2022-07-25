@@ -27,24 +27,24 @@ public class ValidateServiceImpl implements ValidateService {
     }
 
     private void validateName(String name){
-        if(!name.matches("[a-zA-Z\\s]{3,}"))
+        if(name == null || !name.matches("[a-zA-Z\\s]{3,}"))
             throw new UserManagementException(NAME_ERR_DESC,HttpStatus.BAD_REQUEST);
     }
 
     @Override
     public void validateEmail(String email){
-     if(!email.matches(EMAIL_REGEX))
+     if(email == null || !email.matches(EMAIL_REGEX))
          throw new UserManagementException(EMAIL_ERR_DESC, HttpStatus.BAD_REQUEST);
     }
 
     @Override
     public void validatePassword(String password){
-        if(!password.matches(PASSWORD_REGEX))
+        if(password == null || !password.matches(PASSWORD_REGEX))
             throw new UserManagementException(PASSWORD_ERR_DESC, HttpStatus.BAD_REQUEST);
     }
 
     private void validatePhones(List<PhoneRequestDTO> phonesDTO){
-        if(phonesDTO.isEmpty())
+        if(phonesDTO == null || phonesDTO.isEmpty())
             throw new UserManagementException(EMPTY_PHONE_ERR_DESC, HttpStatus.BAD_REQUEST);
 
         phonesDTO
