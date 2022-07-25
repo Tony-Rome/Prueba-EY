@@ -7,7 +7,6 @@ import com.ey.test.dao.repository.UserRepository;
 import com.ey.test.dto.request.PhoneRequestDTO;
 import com.ey.test.dto.request.UserRequestDTO;
 import com.ey.test.dto.response.UserResponseDTO;
-import com.ey.test.service.UserManagementService;
 import com.ey.test.util.DatetimeUtil;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -17,8 +16,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import javax.persistence.Column;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
