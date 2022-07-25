@@ -56,17 +56,17 @@ public class ValidateServiceImpl implements ValidateService {
     }
 
     private void validatePhoneNumber(String phoneNumber){
-        if(!phoneNumber.matches("\\d{8}"))
+        if(phoneNumber == null || !phoneNumber.matches("\\d{8}"))
             throw new UserManagementException(PHONE_ERR_DESC, HttpStatus.BAD_REQUEST);
     }
 
     private void validateCityCode(String cityCode){
-        if(!cityCode.matches("\\d+"))
+        if(cityCode == null || !cityCode.matches("\\d+"))
             throw new UserManagementException(CITY_CODE_ERR_DESC, HttpStatus.BAD_REQUEST);
     }
 
     private void validateCountryCode(String countryCode){
-        if(!countryCode.matches("\\d{2}"))
+        if(countryCode == null || !countryCode.matches("\\d{2}"))
             throw new UserManagementException(COUNTRY_CODE_ERR_DESC, HttpStatus.BAD_REQUEST);
     }
 }
